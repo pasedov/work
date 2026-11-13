@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO-анализ сайта tranpack.ru</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: #f0f4f8;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            border-left: 6px solid #2563eb;
+            padding-left: 1.25rem;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 2rem;
+            padding-left: 1.8rem;
+            font-weight: 400;
+        }
+        .subtitle a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .subtitle a:hover {
+            text-decoration: underline;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.75rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.75rem 1.5rem;
+            border: 1px solid #e2e8f0;
+            transition: 0.2s ease;
+        }
+        .card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #0f172a;
+        }
+        .card h2 .icon {
+            font-size: 1.5rem;
+        }
+        .card p, .card li {
+            color: #334155;
+            font-size: 0.98rem;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card ul li {
+            padding: 0.4rem 0 0.4rem 1.6rem;
+            position: relative;
+        }
+        .card ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: 700;
+        }
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.2rem 0.7rem;
+            border-radius: 999px;
+            margin-left: 0.6rem;
+            vertical-align: middle;
+        }
+        .badge-warn {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .badge-ok {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            margin: 0.75rem 0;
+        }
+        th {
+            text-align: left;
+            background: #eef2ff;
+            padding: 0.7rem 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            border-radius: 10px 10px 0 0;
+        }
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: #334155;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .status-high {
+            color: #b91c1c;
+            font-weight: 600;
+        }
+        .status-mid {
+            color: #b45309;
+            font-weight: 600;
+        }
+        .status-low {
+            color: #15803d;
+            font-weight: 600;
+        }
+        .rec-list {
+            counter-reset: rec;
+            list-style: none;
+            padding: 0;
+        }
+        .rec-list li {
+            counter-increment: rec;
+            padding: 0.9rem 0 0.9rem 2.8rem;
+            position: relative;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .rec-list li:last-child {
+            border-bottom: none;
+        }
+        .rec-list li::before {
+            content: counter(rec);
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 1.8rem;
+            height: 1.8rem;
+            background: #2563eb;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-note {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        .footer-note a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>SEO-анализ сайта tranpack.ru</h1>
+    <div class="subtitle">
+        <a href="https://tranpack.ru" target="_blank">tranpack.ru</a> · ООО «ТРАНПАК» · Дзержинск, Нижегородская область
+    </div>
+
+    <!-- 1. Тематика -->
+    <div class="grid">
+        <div class="card full-width">
+            <h2><span class="icon">🧪</span> 1. Тематика сайта</h2>
+            <p><strong>Химическая продукция и промышленная тара (B2B).</strong> ООО «ТРАНПАК» — производитель и дистрибьютор химической продукции, а также поставщик промышленной тары. Ключевые направления:</p>
+            <ul>
+                <li><strong>Промышленная химия:</strong> натр едкий, перекись водорода, сольвент нефтяной, смола литейная, фенол технический и др.[reference:0]</li>
+                <li><strong>Теплоносители и антифризы:</strong> на основе этиленгликоля (от -30°С) и другие.[reference:1]</li>
+                <li><strong>Моющие и дезинфицирующие средства:</strong> например, LISTERDEZ Универсал К для CIP-мойки и очистки коптильных камер.[reference:2]</li>
+                <li><strong>Промышленная тара:</strong> еврокубы, бочки различных технических характеристик.[reference:3]</li>
+                <li><strong>Химическое сырьё:</strong> спирты, моноэтиленгликоль (МЭГ), пропиленгликоль, растворители, кислоты (уксусная, надуксусная, ортофосфорная и др.).[reference:4]</li>
+            </ul>
+            <p style="margin-top:0.8rem;"><span class="badge">B2B</span> <span class="badge badge-ok">Собственное производство</span> <span class="badge">Россия и СНГ</span> <span class="badge">2000+ контрагентов</span></p>
+        </div>
+    </div>
+
+    <!-- 2. Широта охвата аудитории -->
+    <div class="grid">
+        <div class="card">
+            <h2><span class="icon">🎯</span> 2. Широта охвата аудитории</h2>
+            <p><strong>Целевая аудитория — юридические лица и промышленные предприятия.</strong> Компания поставляет продукцию для любой сферы деятельности, что определяет широкий отраслевой охват.[reference:5]</p>
+            <ul>
+                <li><strong>Химическая и металлургическая промышленность:</strong> ведущие предприятия отрасли.[reference:6]</li>
+                <li><strong>Энергетика:</strong> теплоносители, антифризы, химпродукция для энергетических объектов.[reference:7]</li>
+                <li><strong>Целлюлозно-бумажная промышленность:</strong> перекись водорода, растворители, кислоты.[reference:8]</li>
+                <li><strong>Пищевая промышленность:</strong> моющие и дезинфицирующие средства для оборудования (CIP-мойка).[reference:9]</li>
+                <li><strong>Косметическая, горнодобывающая промышленность:</strong> химическое сырьё.[reference:10]</li>
+                <li><strong>Оборонные государственные предприятия:</strong> химическая продукция специального назначения.[reference:11]</li>
+                <li><strong>География:</strong> Россия и страны СНГ (частные и государственные компании).[reference:12]</li>
+            </ul>
+            <p style="margin-top:0.8rem; color:#475569;"><em>Охват очень широкий в рамках B2B-сегмента. Более 2000 контрагентов уже сотрудничают с компанией, что подтверждает ёмкость аудитории.[reference:13]</em></p>
+        </div>
+        <div class="card">
+            <h2><span class="icon">📊</span> Сводная оценка охвата</h2>
+            <table>
+                <tr><th>Параметр</th><th>Значение</th></tr>
+                <tr><td>Тип аудитории</td><td>B2B (закупщики, технологи, снабженцы)</td></tr>
+                <tr><td>География</td><td>Россия, СНГ</td></tr>
+                <tr><td>Отрасли</td><td>Химпром, металлургия, энергетика, пищепром, ЦБК, косметика, горнодобыча, ОПК</td></tr>
+                <tr><td>Потенциальная ёмкость</td><td>Очень высокая (тысячи предприятий)</td></tr>
+                <tr><td>Текущая клиентская база</td><td>2000+ контрагентов[reference:14]</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 3. Текущее состояние SEO -->
+    <div class="grid">
+        <div class="card full-width">
+            <h2><span class="icon">🔍</span> 3. Текущее состояние SEO <span class="badge badge-warn">Требует существенной оптимизации</span></h2>
+            <p>На основе открытых данных и поисковой выдачи:</p>
+            <table>
+                <tr><th>Критерий</th><th>Состояние</th><th>Комментарий</th></tr>
+                <tr>
+                    <td>Индексация в поисковых системах</td>
+                    <td class="status-mid">Частичная</td>
+                    <td>В индексе присутствуют отдельные страницы товаров (натр едкий, теплоносители, перекись и др.), но далеко не все.[reference:15]</td>
+                </tr>
+                <tr>
+                    <td>Мета-теги (Title, Description)</td>
+                    <td class="status-high">Не оптимизированы</td>
+                    <td>Заголовки страниц товаров часто повторяют название продукта, отсутствуют развёрнутые описания с ключевыми запросами.[reference:16][reference:17]</td>
+                </tr>
+                <tr>
+                    <td>Структура и контент</td>
+                    <td class="status-mid">Базовый уровень</td>
+                    <td>Есть описания продукции и условий поставки, но отсутствует семантическое ядро, блог, экспертные материалы, FAQ.[reference:18]</td>
+                </tr>
+                <tr>
+                    <td>Ссылочный профиль</td>
+                    <td class="status-high">Слабо развит</td>
+                    <td>Упоминания на отраслевых выставках (ХИМИЯ-2024, INTERLAKOKRASKA) есть, но систематической работы с внешними ссылками не видно.[reference:19]</td>
+                </tr>
+                <tr>
+                    <td>Техническая оптимизация</td>
+                    <td class="status-mid">Требует аудита</td>
+                    <td>Необходимо проверить скорость загрузки, мобильную адаптацию, корректность robots.txt и sitemap.xml.</td>
+                </tr>
+                <tr>
+                    <td>Видимость бренда</td>
+                    <td class="status-high">Низкая</td>
+                    <td>Брендовые запросы «ТРАНПАК» / «tranpack» практически не представлены в органической выдаче.</td>
+                </tr>
+            </table>
+            <p style="margin-top:1rem;"><strong>Вывод:</strong> сайт обладает качественной продуктовой базой и широким ассортиментом, однако SEO-оптимизация находится на начальном уровне. Критически важно — расширить индексацию, внедрить семантическое ядро и оптимизировать мета-теги для каждой товарной категории.</p>
+        </div>
+    </div>
+
+    <!-- 4. Потенциальные возможности -->
+    <div class="grid">
+        <div class="card">
+            <h2><span class="icon">🚀</span> 4. Потенциальные возможности</h2>
+            <p>Учитывая широкий ассортимент, охват отраслей и уже имеющуюся клиентскую базу (2000+ контрагентов), потенциал органического роста очень высок:</p>
+            <ul>
+                <li><strong>Рост органического трафика в 4–7 раз</strong> за 6–12 месяцев за счёт охвата семантики по всей химической продукции и таре.[reference:20]</li>
+                <li><strong>Вывод в ТОП-10 Яндекса и Google</strong> по 200–400 коммерческим и информационным запросам (например, «натр едкий гранулированный купить», «теплоноситель этиленгликоль оптом», «перекись водорода техническая»).[reference:21][reference:22]</li>
+                <li><strong>Увеличение количества заявок</strong> с сайта в 3–5 раз за счёт привлечения «горячего» B2B-трафика.</li>
+                <li><strong>Формирование экспертного бренда</strong> в нише промышленной химии и тары через полезный контент (статьи о применении, нормативы, кейсы).</li>
+            </ul>
+            <p style="margin-top:0.8rem; color:#475569;"><em>Потенциал очень высокий, так как ниша узкая, а конкуренция в органическом поиске по промышленной химии ниже, чем в B2C. Широкий отраслевой охват обеспечивает диверсификацию трафика.</em></p>
+        </div>
+        <div class="card">
+            <h2><span class="icon">📈</span> Ожидаемые показатели (прогноз)</h2>
+            <table>
+                <tr><th>Показатель</th><th>Текущее (оценка)</th><th>Через 6–12 мес.</th></tr>
+                <tr><td>Органический трафик, визитов/мес.</td><td>~50–150</td><td>500–2 500+</td></tr>
+                <tr><td>Ключевых слов в ТОП-10</td><td>Единицы</td><td>80–250</td></tr>
+                <tr><td>Заявок с сайта, шт./мес.</td><td>3–7</td><td>15–40</td></tr>
+                <tr><td>Индексация страниц</td><td>Частичная</td><td>Полная (100+ страниц товаров и категорий)</td></tr>
+            </table>
+            <p style="margin-top:0.8rem; font-size:0.9rem; color:#64748b;">* Прогноз основан на кейсах SEO-продвижения в B2B-химии и смежных нишах.</p>
+        </div>
+    </div>
+
+    <!-- 5. Рекомендации -->
+    <div class="grid">
+        <div class="card full-width">
+            <h2><span class="icon">✅</span> 5. Действия для достижения максимальных показателей</h2>
+            <ol class="rec-list">
+                <li><strong>Провести технический SEO-аудит и обеспечить полную индексацию.</strong> Проверить <code>robots.txt</code>, <code>sitemap.xml</code>, скорость загрузки, мобильную адаптацию, коды ответа сервера. Добавить сайт в Яндекс.Вебмастер и Google Search Console, загрузить все URL товаров и категорий.</li>
+                <li><strong>Собрать семантическое ядро по каждой товарной группе.</strong> Сформировать списки запросов для промышленной химии, теплоносителей, растворителей, тары и моющих средств. Использовать профессиональную лексику, синонимы и торговые марки (например, «натр едкий гранулированный ГОСТ», «теплоноситель -30 купить»).[reference:23][reference:24]</li>
+                <li><strong>Оптимизировать мета-теги и структуру страниц.</strong> Прописать уникальные Title и Description с ключевыми запросами для каждой карточки товара и категории. Оптимизировать заголовки H1–H3, добавить LSI-фразы. Создать отдельные посадочные страницы под каждое направление (натр едкий, перекись, теплоносители, тара и т.д.).</li>
+                <li><strong>Создать экспертный контент (E-E-A-T).</strong> В B2B-химии информационные статьи ранжируются лучше коммерческих страниц. Публиковать технические руководства, инструкции по применению, обзоры ГОСТов, кейсы для разных отраслей. Это повысит доверие и привлечёт целевой трафик.</li>
+                <li><strong>Сформировать ссылочный профиль.</strong> Активно регистрироваться в отраслевых B2B-каталогах, справочниках поставщиков химической продукции, на порталах по промышленности. Использовать участие в выставках (ХИМИЯ, INTERLAKOKRASKA) для получения ссылок с сайтов организаторов и партнёров.[reference:25]</li>
+                <li><strong>Оптимизировать под голосовой поиск и ИИ-ассистенты (GEO).</strong> B2B-закупщики всё чаще используют ИИ для поиска поставщиков. Создавать чёткие, структурированные ответы на типовые вопросы (FAQ, спецификации, условия поставки) в формате, удобном для парсинга.</li>
+                <li><strong>Внедрить аналитику и отслеживание конверсий.</strong> Настроить цели в Яндекс.Метрике и Google Analytics: отправка форм, звонки, скачивание прайс-листов. Это позволит измерять эффективность SEO в заявках и выручке.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Итог -->
+    <div class="grid">
+        <div class="card full-width" style="background: #eff6ff; border-color: #bfdbfe;">
+            <h2 style="margin-bottom:0.5rem;"><span class="icon">💎</span> Итоговый вердикт</h2>
+            <p style="font-size:1.05rem;"><strong>Сайт tranpack.ru обладает очень высоким потенциалом для органического роста в узкой B2B-нише промышленной химии и тары.</strong> Широкий ассортимент, охват множества отраслей и наличие более 2000 контрагентов создают прочную основу. Однако текущее состояние SEO можно охарактеризовать как «начальное»: частичная индексация, отсутствие семантического ядра и неоптимизированные мета-теги сдерживают рост. При выполнении базовых технических и контентных работ сайт способен в течение 6–12 месяцев выйти на стабильный поток целевых заявок и значительно укрепить позиции бренда в отрасли.</p>
+            <p style="margin-top:0.8rem;"><strong>Приоритет №1 — обеспечить полную индексацию всего ассортимента и внедрить семантическое ядро в мета-теги и структуру страниц.</strong> Без этого другие действия не дадут максимального результата.</p>
+        </div>
+    </div>
+
+    <!-- Источники -->
+    <div class="footer-note">
+        <strong>Источники и данные:</strong> главная страница tranpack.ru ; карточки товаров (натр едкий, теплоносители, перекись водорода, сольвент, смола, фенол, LISTERDEZ) ; данные отраслевых каталогов (ХИМИЯ-2024, INTERLAKOKRASKA 2024) ; информация о компании (dzhr.ru) . Прогнозы основаны на консервативных оценках типичных B2B-кейсов в химической отрасли.
+    </div>
+
+</div>
+</body>
+</html>

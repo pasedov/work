@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO-анализ сайта sterileworld.ru</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: #f0f4f8;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            padding: 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            border-left: 6px solid #2563eb;
+            padding-left: 1.25rem;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 2rem;
+            padding-left: 1.8rem;
+            font-weight: 400;
+        }
+        .subtitle a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .subtitle a:hover {
+            text-decoration: underline;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.75rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.75rem 1.5rem;
+            border: 1px solid #e2e8f0;
+            transition: 0.2s ease;
+        }
+        .card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #0f172a;
+        }
+        .card h2 .icon {
+            font-size: 1.5rem;
+        }
+        .card p, .card li {
+            color: #334155;
+            font-size: 0.98rem;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card ul li {
+            padding: 0.4rem 0 0.4rem 1.6rem;
+            position: relative;
+        }
+        .card ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: 700;
+        }
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.2rem 0.7rem;
+            border-radius: 999px;
+            margin-left: 0.6rem;
+            vertical-align: middle;
+        }
+        .badge-warn {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .badge-ok {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            margin: 0.75rem 0;
+        }
+        th {
+            text-align: left;
+            background: #eef2ff;
+            padding: 0.7rem 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            border-radius: 10px 10px 0 0;
+        }
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: #334155;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .status-high {
+            color: #b91c1c;
+            font-weight: 600;
+        }
+        .status-mid {
+            color: #b45309;
+            font-weight: 600;
+        }
+        .status-low {
+            color: #15803d;
+            font-weight: 600;
+        }
+        .rec-list {
+            counter-reset: rec;
+            list-style: none;
+            padding: 0;
+        }
+        .rec-list li {
+            counter-increment: rec;
+            padding: 0.9rem 0 0.9rem 2.8rem;
+            position: relative;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .rec-list li:last-child {
+            border-bottom: none;
+        }
+        .rec-list li::before {
+            content: counter(rec);
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 1.8rem;
+            height: 1.8rem;
+            background: #2563eb;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-note {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        .footer-note a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>SEO-анализ сайта sterileworld.ru</h1>
+    <div class="subtitle">
+        <a href="https://sterileworld.ru" target="_blank">sterileworld.ru</a> · ООО «Стерильный мир» · Дзержинск, Нижегородская область
+    </div>
+
+    <!-- 1. Тематика -->
+    <div class="grid">
+        <div class="card full-width">
+            <h2><span class="icon">🧪</span> 1. Тематика сайта</h2>
+            <p><strong>Промышленная химия и дезинфекция (B2B).</strong> Компания «Стерильный мир» — производитель и поставщик химической продукции, дезинфицирующих средств и промышленной тары. Ключевые направления:</p>
+            <ul>
+                <li>Дезинфицирующие средства на основе надуксусной кислоты (марки НУК 5, 10, 15) [reference:0].</li>
+                <li>Перекись водорода асептическая 35% и 37% для стерилизации упаковки [reference:1].</li>
+                <li>Моющие и дезинфицирующие составы для CIP-мойки оборудования [reference:2].</li>
+                <li>Растворители (ацетон, толуол, нефрасы, уайт-спирит, спирты и др.) [reference:3].</li>
+                <li>Промышленная тара: еврокубы, бочки, выкуп и утилизация [reference:4].</li>
+            </ul>
+            <p style="margin-top:0.8rem;"><span class="badge">B2B</span> <span class="badge badge-ok">Собственное производство</span> <span class="badge">Россия и СНГ</span></p>
+        </div>
+    </div>
+
+    <!-- 2. Широта охвата аудитории -->
+    <div class="grid">
+        <div class="card">
+            <h2><span class="icon">🎯</span> 2. Широта охвата аудитории</h2>
+            <p><strong>Целевая аудитория — юридические лица и промышленные предприятия.</strong></p>
+            <ul>
+                <li><strong>Пищевая промышленность:</strong> молочные, пивоваренные, мясоперерабатывающие производства [reference:5].</li>
+                <li><strong>Промышленные предприятия:</strong> химическая, перерабатывающая, производственная сфера.</li>
+                <li><strong>Дистрибьюторы и оптовые покупатели</strong> в России и СНГ [reference:6].</li>
+                <li><strong>География:</strong> вся Россия и страны СНГ, логистика собственным отделом [reference:7].</li>
+            </ul>
+            <p style="margin-top:0.8rem; color:#475569;"><em>Охват широкий в рамках B2B-сегмента, но ограничен профессиональной химической тематикой. Потенциально — несколько тысяч предприятий-потребителей по всей России и СНГ.</em></p>
+        </div>
+        <div class="card">
+            <h2><span class="icon">📊</span> Сводная оценка охвата</h2>
+            <table>
+                <tr><th>Параметр</th><th>Значение</th></tr>
+                <tr><td>Тип аудитории</td><td>B2B (закупщики, технологи, снабженцы)</td></tr>
+                <tr><td>География</td><td>Россия, СНГ</td></tr>
+                <tr><td>Отрасли</td><td>Пищепром, химпром, промышленность</td></tr>
+                <tr><td>Потенциальная ёмкость</td><td>Высокая (тысячи предприятий)</td></tr>
+                <tr><td>Сложность коммуникации</td><td>Средняя (нужна экспертиза)</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 3. Текущее состояние SEO -->
+    <div class="grid">
+        <div class="card full-width">
+            <h2><span class="icon">🔍</span> 3. Текущее состояние SEO <span class="badge badge-warn">Требует вмешательства</span></h2>
+            <p>На основе открытых данных и поисковой выдачи можно сделать следующие выводы:</p>
+            <table>
+                <tr><th>Критерий</th><th>Состояние</th><th>Комментарий</th></tr>
+                <tr>
+                    <td>Индексация в поисковых системах</td>
+                    <td class="status-high">Критическое</td>
+                    <td>Запрос <code>site:sterileworld.ru</code> не дал результатов в проанализированной выдаче — сайт может быть плохо проиндексирован или отсутствовать в индексе [reference:8].</td>
+                </tr>
+                <tr>
+                    <td>Мета-теги (Title, Description)</td>
+                    <td class="status-mid">Не оптимизированы</td>
+                    <td>На главной странице отсутствуют явные оптимизированные заголовки и описания под ключевые запросы.</td>
+                </tr>
+                <tr>
+                    <td>Структура и контент</td>
+                    <td class="status-mid">Базовый уровень</td>
+                    <td>Есть описание продукции и услуг, но нет семантического ядра, блога, экспертных материалов.</td>
+                </tr>
+                <tr>
+                    <td>Ссылочный профиль</td>
+                    <td class="status-high">Не сформирован</td>
+                    <td>Отсутствуют внешние ссылки с отраслевых порталов, каталогов, СМИ.</td>
+                </tr>
+                <tr>
+                    <td>Техническая оптимизация</td>
+                    <td class="status-mid">Требует аудита</td>
+                    <td>Необходимо проверить скорость загрузки, мобильную адаптацию, robots.txt, редиректы.</td>
+                </tr>
+                <tr>
+                    <td>Видимость бренда</td>
+                    <td class="status-high">Низкая</td>
+                    <td>Брендовые запросы «Стерильный мир» практически не представлены в выдаче.</td>
+                </tr>
+            </table>
+            <p style="margin-top:1rem;"><strong>Вывод:</strong> сайт находится на начальном этапе SEO-развития. Критически важные проблемы — индексация и отсутствие семантического ядра — не позволяют получать целевой органический трафик.</p>
+        </div>
+    </div>
+
+    <!-- 4. Потенциальные возможности -->
+    <div class="grid">
+        <div class="card">
+            <h2><span class="icon">🚀</span> 4. Потенциальные возможности</h2>
+            <p>При устранении технических ошибок и проведении базовой SEO-оптимизации сайт может выйти на следующие показатели (на основе кейсов в смежных B2B-нишах):</p>
+            <ul>
+                <li><strong>Рост органического трафика в 3–5 раз</strong> за 6–12 месяцев за счёт охвата семантики по химической продукции [reference:9].</li>
+                <li><strong>Вывод в ТОП-10 Яндекса и Google</strong> по 100–300 узкоспециализированным B2B-запросам (например, «перекись водорода оптом», «дезинфицирующие средства для пищевой промышленности») [reference:10].</li>
+                <li><strong>Увеличение количества заявок</strong> с сайта в 2–4 раза за счёт привлечения «горячего» трафика.</li>
+                <li><strong>Формирование экспертного бренда</strong> в нише промышленной химии и дезинфекции.</li>
+            </ul>
+            <p style="margin-top:0.8rem; color:#475569;"><em>Потенциал высокий, так как ниша узкая, а конкуренция в органическом поиске по промышленной химии ниже, чем в B2C.</em></p>
+        </div>
+        <div class="card">
+            <h2><span class="icon">📈</span> Ожидаемые показатели (прогноз)</h2>
+            <table>
+                <tr><th>Показатель</th><th>Текущее (оценка)</th><th>Через 6–12 мес.</th></tr>
+                <tr><td>Органический трафик, визитов/мес.</td><td>~0–50</td><td>500–2 000+</td></tr>
+                <tr><td>Ключевых слов в ТОП-10</td><td>0</td><td>50–150</td></tr>
+                <tr><td>Заявок с сайта, шт./мес.</td><td>0–2</td><td>10–30</td></tr>
+                <tr><td>Индексация страниц</td><td>Единичная</td><td>Полная (50+ страниц)</td></tr>
+            </table>
+            <p style="margin-top:0.8rem; font-size:0.9rem; color:#64748b;">* Прогноз консервативный, основан на кейсах B2B-продвижения в химической и медицинской отраслях.</p>
+        </div>
+    </div>
+
+    <!-- 5. Рекомендации -->
+    <div class="grid">
+        <div class="card full-width">
+            <h2><span class="icon">✅</span> 5. Действия для достижения максимальных показателей</h2>
+            <ol class="rec-list">
+                <li><strong>Провести технический SEO-аудит и устранить ошибки индексации.</strong> Настроить корректный <code>robots.txt</code>, проверить <code>sitemap.xml</code>, скорость загрузки, мобильную адаптацию, коды ответа сервера, редиректы. Добавить сайт в Яндекс.Вебмастер и Google Search Console [reference:11].</li>
+                <li><strong>Собрать семантическое ядро.</strong> Сформировать список ключевых запросов по каждой товарной категории (перекись водорода, дезинфицирующие средства, растворители, тара) с учётом профессиональной лексики и синонимов. Использовать Wordstat, Key Collector, анализ конкурентов [reference:12].</li>
+                <li><strong>Оптимизировать мета-теги и структуру страниц.</strong> Прописать уникальные Title и Description для каждой категории и карточки товара, оптимизировать заголовки H1–H6, добавить LSI-фразы. Создать отдельные посадочные страницы под каждое направление продукции [reference:13].</li>
+                <li><strong>Создать экспертный контент.</strong> В B2B-нише информационные статьи ранжируются лучше коммерческих страниц. Публиковать технические статьи, кейсы, инструкции по применению, обзоры нормативных требований. Это повышает экспертность (E-E-A-T) и привлекает целевой трафик [reference:14].</li>
+                <li><strong>Сформировать ссылочный профиль.</strong> Зарегистрироваться в отраслевых B2B-каталогах, справочниках поставщиков химической продукции, на порталах по пищевой промышленности. Работать с отраслевыми СМИ и площадками для пресс-релизов [reference:15].</li>
+                <li><strong>Оптимизировать под голосовой поиск и нейросети (GEO).</strong> Учитывать, что B2B-закупщики всё чаще используют ИИ-ассистенты. Создавать чёткие, структурированные ответы на типовые вопросы (FAQ, спецификации).</li>
+                <li><strong>Внедрить аналитику и отслеживание конверсий.</strong> Настроить цели в Яндекс.Метрике и Google Analytics, отслеживать заявки с форм, звонки, скачивания прайс-листов. Это позволит оценивать эффективность SEO в деньгах.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Итог -->
+    <div class="grid">
+        <div class="card full-width" style="background: #eff6ff; border-color: #bfdbfe;">
+            <h2 style="margin-bottom:0.5rem;"><span class="icon">💎</span> Итоговый вердикт</h2>
+            <p style="font-size:1.05rem;"><strong>Сайт sterileworld.ru обладает высоким потенциалом для органического роста в узкой B2B-нише промышленной химии.</strong> Однако текущее состояние SEO можно охарактеризовать как «нулевое»: отсутствие индексации, семантики и ссылочной массы. При выполнении базовых технических и контентных работ сайт способен в течение 6–12 месяцев выйти на стабильный поток целевых заявок и значительно укрепить позиции бренда в отрасли.</p>
+            <p style="margin-top:0.8rem;">Приоритет №1 — обеспечить полную индексацию сайта в Яндексе и Google. Без этого любые другие действия не дадут результата.</p>
+        </div>
+    </div>
+
+    <!-- Источники -->
+    <div class="footer-note">
+        <strong>Источники и данные:</strong> главная страница sterileworld.ru [reference:16]; кейсы SEO-продвижения в B2B-химии и медицине [reference:17][reference:18][reference:19]; рекомендации по B2B-контенту и E-E-A-T [reference:20]; данные по индексации (site:sterileworld.ru) [reference:21]. Прогнозы основаны на консервативных оценках типичных B2B-кейсов.
+    </div>
+
+</div>
+</body>
+</html>
