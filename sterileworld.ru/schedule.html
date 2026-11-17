@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Стратегия SEO и GEO продвижения — sterileworld.ru и tranpack.ru</title>
+<style>
+  :root{
+    --ink:#0f1b2d;
+    --ink-soft:#3d4b5f;
+    --muted:#6b7a8f;
+    --accent:#0e7c86;
+    --accent-soft:#e3f2f3;
+    --amber:#e08a2e;
+    --amber-soft:#fdf1e3;
+    --bg:#f4f7f9;
+    --line:#dde5eb;
+    --white:#ffffff;
+    --radius:14px;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .page{
+    max-width:1080px;
+    margin:0 auto;
+    background:var(--white);
+    box-shadow:0 2px 40px rgba(15,27,45,.08);
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero{
+    background:
+      radial-gradient(900px 400px at 90% -10%, rgba(14,124,134,.55), transparent 65%),
+      radial-gradient(700px 380px at 0% 110%, rgba(224,138,46,.28), transparent 60%),
+      linear-gradient(160deg,#0b1524 0%, #12233b 55%, #14364a 100%);
+    color:#fff;
+    padding:56px 60px 48px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:linear-gradient(180deg, rgba(0,0,0,.9), transparent 85%);
+    pointer-events:none;
+  }
+
+  .hero > *{position:relative; z-index:1;}
+
+  .eyebrow{
+    display:inline-block;
+    font-size:11.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:#8fe0e6;
+    border:1px solid rgba(143,224,230,.4);
+    padding:6px 14px;
+    border-radius:100px;
+    margin-bottom:22px;
+  }
+
+  .hero h1{
+    font-size:40px;
+    line-height:1.15;
+    margin:0 0 14px;
+    font-weight:800;
+    letter-spacing:-.02em;
+  }
+
+  .hero h1 span{color:#8fe0e6;}
+
+  .hero .lead{
+    font-size:17px;
+    color:#c6d4e2;
+    max-width:760px;
+    margin:0 0 32px;
+  }
+
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .hero-meta div{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:10px;
+    padding:10px 16px;
+    font-size:13.5px;
+    color:#dce7f1;
+  }
+
+  .hero-meta strong{
+    display:block;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#8fa8bf;
+    font-weight:700;
+    margin-bottom:3px;
+  }
+
+  /* ---------- SECTIONS ---------- */
+
+  .section{
+    padding:48px 60px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .section:last-of-type{border-bottom:none;}
+
+  .section-title{
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:800;
+    color:var(--accent);
+    margin:0 0 8px;
+  }
+
+  .section h2{
+    font-size:26px;
+    line-height:1.25;
+    margin:0 0 10px;
+    font-weight:800;
+    letter-spacing:-.015em;
+  }
+
+  .section-intro{
+    color:var(--ink-soft);
+    max-width:820px;
+    margin:0 0 30px;
+    font-size:15.5px;
+  }
+
+  /* ---------- SUMMARY CARDS ---------- */
+
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+
+  .card{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 22px 24px;
+    background:linear-gradient(180deg,#fbfdfe,#f7fafb);
+    position:relative;
+  }
+
+  .card .num{
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.12em;
+    color:var(--muted);
+    display:block;
+    margin-bottom:10px;
+  }
+
+  .card h3{
+    font-size:16.5px;
+    margin:0 0 8px;
+    font-weight:750;
+    line-height:1.3;
+  }
+
+  .card p{
+    margin:0;
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+
+  /* ---------- TIMELINE ---------- */
+
+  .timeline{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 24px 18px;
+    background:#fbfdfe;
+    overflow-x:auto;
+  }
+
+  .tl-inner{min-width:760px;}
+
+  .tl-head,
+  .tl-row{
+    display:grid;
+    grid-template-columns:210px repeat(12,1fr);
+    gap:5px;
+    align-items:center;
+  }
+
+  .tl-head{
+    margin-bottom:8px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .tl-head .tl-week{
+    font-size:10.5px;
+    font-weight:800;
+    color:var(--muted);
+    text-align:center;
+    letter-spacing:.04em;
+  }
+
+  .tl-row{margin-bottom:8px;}
+
+  .tl-label{
+    font-size:13px;
+    font-weight:700;
+    color:var(--ink);
+    padding-right:10px;
+    line-height:1.3;
+  }
+
+  .tl-label em{
+    display:block;
+    font-style:normal;
+    font-weight:500;
+    font-size:11.5px;
+    color:var(--muted);
+    margin-top:2px;
+  }
+
+  .tl-bar{
+    height:28px;
+    border-radius:7px;
+    background:linear-gradient(90deg,#0e7c86,#2aa7b0);
+    grid-row:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:800;
+    color:#fff;
+    letter-spacing:.04em;
+    white-space:nowrap;
+  }
+
+  .tl-bar.alt{background:linear-gradient(90deg,#e08a2e,#efab55);}
+  .tl-bar.dark{background:linear-gradient(90deg,#1d2f4a,#33506f);}
+
+  .tl-track{
+    grid-column:2 / span 12;
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    gap:5px;
+    grid-row:1;
+  }
+
+  .tl-track::before{
+    content:"";
+    grid-column:1 / span 12;
+    grid-row:1;
+    height:28px;
+    border-radius:7px;
+    background:repeating-linear-gradient(90deg,#eef3f6 0,#eef3f6 calc((100% - 55px)/12),transparent calc((100% - 55px)/12),transparent calc((100% - 55px)/12 + 5px));
+  }
+
+  .tl-track span{grid-row:1;}
+
+  .legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px dashed var(--line);
+    font-size:12.5px;
+    color:var(--muted);
+  }
+
+  .legend i{
+    display:inline-block;
+    width:11px;height:11px;
+    border-radius:3px;
+    margin-right:7px;
+    vertical-align:middle;
+  }
+
+  /* ---------- STAGES ---------- */
+
+  .stage{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    margin-bottom:22px;
+  }
+
+  .stage-head{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:18px 24px;
+    background:linear-gradient(90deg,#f0f6f8,#fafcfd);
+    border-bottom:1px solid var(--line);
+  }
+
+  .stage-num{
+    flex:0 0 40px;
+    height:40px;
+    border-radius:11px;
+    background:var(--ink);
+    color:#8fe0e6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:16px;
+  }
+
+  .stage-head h3{
+    margin:0;
+    font-size:18px;
+    font-weight:780;
+    line-height:1.3;
+    letter-spacing:-.01em;
+  }
+
+  .stage-head .chip{
+    margin-left:auto;
+    flex:0 0 auto;
+    font-size:11.5px;
+    font-weight:800;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent);
+    background:var(--accent-soft);
+    border-radius:100px;
+    padding:7px 14px;
+    white-space:nowrap;
+  }
+
+  .stage-body{
+    display:grid;
+    grid-template-columns:1.55fr 1fr;
+  }
+
+  .stage-works{padding:24px 26px 26px;}
+
+  .stage-works h4,
+  .stage-result h4{
+    font-size:11px;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    font-weight:800;
+    color:var(--muted);
+    margin:0 0 14px;
+  }
+
+  .stage-works ol{
+    margin:0;
+    padding-left:0;
+    list-style:none;
+    counter-reset:w;
+  }
+
+  .stage-works li{
+    counter-increment:w;
+    position:relative;
+    padding-left:34px;
+    margin-bottom:13px;
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+
+  .stage-works li:last-child{margin-bottom:0;}
+
+  .stage-works li::before{
+    content:counter(w);
+    position:absolute;
+    left:0;top:1px;
+    width:22px;height:22px;
+    border-radius:6px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    font-size:11.5px;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .stage-works li b{color:var(--ink);font-weight:700;}
+
+  .stage-result{
+    padding:24px 26px 26px;
+    background:#fbfdfe;
+    border-left:1px solid var(--line);
+  }
+
+  .stage-result ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+
+  .stage-result li{
+    position:relative;
+    padding-left:26px;
+    margin-bottom:12px;
+    font-size:14px;
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+
+  .stage-result li:last-child{margin-bottom:0;}
+
+  .stage-result li::before{
+    content:"✓";
+    position:absolute;
+    left:0;top:0;
+    color:var(--accent);
+    font-weight:800;
+    font-size:14px;
+  }
+
+  /* ---------- KPI TABLE ---------- */
+
+  .table-wrap{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+
+  thead th{
+    background:var(--ink);
+    color:#dce7f1;
+    text-align:left;
+    padding:14px 18px;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    font-weight:800;
+  }
+
+  tbody td{
+    padding:15px 18px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+
+  tbody tr:nth-child(even){background:#fbfdfe;}
+  tbody tr:last-child td{border-bottom:none;}
+
+  tbody td:first-child{
+    color:var(--ink);
+    font-weight:700;
+    width:26%;
+  }
+
+  tbody td:nth-child(2){
+    width:32%;
+    color:var(--accent);
+    font-weight:650;
+  }
+
+  .callout{
+    margin-top:22px;
+    border-left:4px solid var(--amber);
+    background:var(--amber-soft);
+    border-radius:0 12px 12px 0;
+    padding:18px 22px;
+    font-size:14.5px;
+    line-height:1.6;
+    color:#6b4a17;
+  }
+
+  .callout b{color:#54390f;}
+
+  /* ---------- GLOSSARY ---------- */
+
+  .glossary{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+
+  .term{
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 20px 20px;
+    background:#fbfdfe;
+  }
+
+  .term dt{
+    font-size:15px;
+    font-weight:800;
+    color:var(--accent);
+    margin-bottom:7px;
+    letter-spacing:-.01em;
+  }
+
+  .term dd{
+    margin:0;
+    font-size:13.8px;
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+
+  .term dd em{
+    display:block;
+    margin-top:8px;
+    font-style:normal;
+    font-size:12.8px;
+    color:var(--muted);
+    border-top:1px dashed var(--line);
+    padding-top:8px;
+  }
+
+  .term dd em b{color:var(--ink);font-weight:700;}
+
+  /* ---------- FOOTER ---------- */
+
+  .footer{
+    padding:32px 60px 40px;
+    background:var(--ink);
+    color:#93a7bd;
+    font-size:13px;
+    line-height:1.65;
+  }
+
+  .footer strong{color:#fff;}
+
+  .footer .disclaimer{
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:18px;
+    padding-top:18px;
+    font-size:12.2px;
+    color:#7d90a6;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+
+  @media (max-width:920px){
+    .hero{padding:40px 28px 34px;}
+    .hero h1{font-size:30px;}
+    .section{padding:36px 28px;}
+    .cards{grid-template-columns:1fr;}
+    .stage-body{grid-template-columns:1fr;}
+    .stage-result{border-left:none;border-top:1px solid var(--line);}
+    .glossary{grid-template-columns:1fr;}
+    .stage-head{flex-wrap:wrap;}
+    .stage-head .chip{margin-left:56px;}
+    .footer{padding:26px 28px 32px;}
+  }
+
+  /* ---------- PRINT ---------- */
+
+  @media print{
+    body{background:#fff;font-size:11.5pt;}
+    .page{box-shadow:none;max-width:none;}
+    .hero{
+      -webkit-print-color-adjust:exact;
+      print-color-adjust:exact;
+      padding:32px 36px 28px;
+    }
+    .hero h1{font-size:26pt;}
+    .section{padding:24px 36px;page-break-inside:avoid;}
+    .stage,.card,.term,.table-wrap,.timeline{page-break-inside:avoid;}
+    thead th{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .footer{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .tl-inner{min-width:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <span class="eyebrow">Коммерческое предложение · SEO + GEO</span>
+    <h1>Стратегия продвижения <span>sterileworld.ru</span><br>и <span>tranpack.ru</span></h1>
+    <p class="lead">
+      План работ на 3 месяца: техническая база, семантика под логику закупщика,
+      контент с экспертной атрибуцией и целенаправленная работа с генеративными
+      ответами (Яндекс Нейро, Google AI Overviews) в нише промышленной химии и тары.
+    </p>
+    <div class="hero-meta">
+      <div><strong>Проекты</strong>sterileworld.ru · tranpack.ru</div>
+      <div><strong>Горизонт</strong>3 месяца (12 недель)</div>
+      <div><strong>Ниша</strong>B2B: химия, дезинфекция, тара</div>
+      <div><strong>Фокус</strong>SEO + GEO (AI-выдача)</div>
+    </div>
+  </header>
+
+  <!-- ================= SUMMARY ================= -->
+  <section class="section">
+    <p class="section-title">Ключевая идея</p>
+    <h2>Три принципа, на которых держится план</h2>
+    <p class="section-intro">
+      В этой нише закупщик ищет не «купить бочку», а «еврокуб 1000 л б/у под агрессивные среды
+      с паспортом качества». Поэтому продвижение строится вокруг профессиональных запросов
+      с высокой коммерческой конкретикой — и вокруг того, чтобы бренд стал цитируемым
+      источником в генеративных ответах.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Семантика под ЛПР, а не под ВЧ</h3>
+        <p>Ядро собирается по маркам, концентрациям, объёмам, состоянию тары и назначению.
+        Ценность создают средне- и низкочастотные запросы с высокой готовностью к сделке.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>SEO и GEO одновременно</h3>
+        <p>Около 37–38% URL, процитированных в AI-ответах, одновременно входят в топ-10
+        классической выдачи. Значит, одного SEO-фундамента недостаточно — нужна
+        отдельная работа над структурой, фактологией и цифровым следом.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>Синергия двух сайтов</h3>
+        <p>Пересечение аудитории и ассортимента позволяет усиливать экспертность суммарно,
+        без дублирования: sterileworld.ru — дезинфекция и специальные марки,
+        tranpack.ru — складской ассортимент химии и тары.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE ================= -->
+  <section class="section">
+    <p class="section-title">Дорожная карта</p>
+    <h2>Распределение этапов по неделям</h2>
+    <p class="section-intro">
+      Этапы частично пересекаются: техническая оптимизация стартует параллельно с аудитом,
+      а GEO-блок подключается после того, как готов контентный фундамент.
+    </p>
+
+    <div class="timeline">
+      <div class="tl-inner">
+
+        <div class="tl-head">
+          <div></div>
+          <div class="tl-week">1</div><div class="tl-week">2</div><div class="tl-week">3</div>
+          <div class="tl-week">4</div><div class="tl-week">5</div><div class="tl-week">6</div>
+          <div class="tl-week">7</div><div class="tl-week">8</div><div class="tl-week">9</div>
+          <div class="tl-week">10</div><div class="tl-week">11</div><div class="tl-week">12</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">1. Аудит и фундамент<em>техника, семантика, аналитика</em></div>
+          <div class="tl-track"><span class="tl-bar" style="grid-column:1 / span 4;">нед. 1–4</span></div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">2. Техоптимизация и архитектура<em>каталог под логику закупщика</em></div>
+          <div class="tl-track"><span class="tl-bar dark" style="grid-column:3 / span 4;">нед. 3–6</span></div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">3. Контент и E-E-A-T<em>страницы, кейсы, экспертиза</em></div>
+          <div class="tl-track"><span class="tl-bar" style="grid-column:5 / span 6;">нед. 5–10</span></div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">4. GEO: генеративные ответы<em>Нейро и AI Overviews</em></div>
+          <div class="tl-track"><span class="tl-bar alt" style="grid-column:7 / span 6;">нед. 7–12</span></div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">5. Аналитика и итерации<em>KPI, отчёт, бэклог</em></div>
+          <div class="tl-track"><span class="tl-bar dark" style="grid-column:10 / span 3;">нед. 10–12</span></div>
+        </div>
+
+      </div>
+
+      <div class="legend">
+        <span><i style="background:linear-gradient(90deg,#0e7c86,#2aa7b0);"></i>SEO-этапы</span>
+        <span><i style="background:linear-gradient(90deg,#1d2f4a,#33506f);"></i>Техника / аналитика</span>
+        <span><i style="background:linear-gradient(90deg,#e08a2e,#efab55);"></i>GEO-направление</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STAGE 1 ================= -->
+  <section class="section">
+    <p class="section-title">Этапы и работы</p>
+    <h2>Что делаем на каждом шаге</h2>
+    <p class="section-intro">
+      Для каждого этапа зафиксированы перечень работ, сроки и измеримый результат,
+      который заказчик получает на выходе.
+    </p>
+
+    <!-- STAGE 1 -->
+    <div class="stage">
+      <div class="stage-head">
+        <div class="stage-num">1</div>
+        <h3>Аудит и фундамент</h3>
+        <span class="chip">Недели 1–4</span>
+      </div>
+      <div class="stage-body">
+        <div class="stage-works">
+          <h4>Перечень работ</h4>
+          <ol>
+            <li><b>Технический аудит обоих сайтов:</b> скорость и Core Web Vitals
+            (LCP ≤ 2,5 с, INP ≤ 200 мс, CLS ≤ 0,1), индексация, дубли, битые ссылки,
+            canonical, структура URL, мобильная версия, HTTPS, robots.txt и карта сайта.</li>
+            <li><b>Аудит микроразметки:</b> наличие Schema.org (Organization, Product, Offer,
+            FAQPage, BreadcrumbList). Для GEO это обязательно — LLM-парсеры извлекают
+            сущности именно из структурированных блоков.</li>
+            <li><b>Семантический аудит и сбор ядра</b> по трём группам: продуктовые/марочные,
+            application/задачные и тарные запросы. Отдельно — запросы с CAS-номерами и ТУ.</li>
+            <li><b>Аудит текущего контента:</b> какие интенты закрыты, где «тонкий» контент
+            и дубли, где отсутствуют сертификаты и паспорта качества — прямые E-E-A-T-сигналы.</li>
+            <li><b>Настройка аналитики:</b> GA4 / Яндекс Метрика, цели на заявки и звонки,
+            отслеживание переходов из AI-ответов и брендовых запросов в нейросетях.</li>
+          </ol>
+        </div>
+        <div class="stage-result">
+          <h4>Результат этапа</h4>
+          <ul>
+            <li>Технический аудит с приоритизированным списком правок (критичные / средние / низкие).</li>
+            <li>Семантическое ядро на 800–1500+ запросов по каждому сайту, сгруппированное по интентам и продуктам.</li>
+            <li>Карта контент-пробелов: каких страниц не хватает.</li>
+            <li>Настроенные цели и дашборд «до / после» для честного замера результата.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="stage">
+      <div class="stage-head">
+        <div class="stage-num">2</div>
+        <h3>Техническая оптимизация и архитектура каталога</h3>
+        <span class="chip">Недели 3–6</span>
+      </div>
+      <div class="stage-body">
+        <div class="stage-works">
+          <h4>Перечень работ</h4>
+          <ol>
+            <li><b>Исправление критичных ошибок:</b> скорость, индексация, дубли,
+            мобильная выдача, корректная пагинация в каталогах.</li>
+            <li><b>Перестройка архитектуры каталога под логику закупщика.</b> Для тары —
+            по типу, объёму, материалу, состоянию (новая / б/у), назначению. Для химии —
+            по веществу и марке, концентрации, квалификации, фасовке.</li>
+            <li><b>Внедрение и расширение Schema.org:</b> Product + Offer с availability
+            и единицей поставки, Article с автором и должностью специалиста, FAQPage для FAQ-блоков.</li>
+            <li><b>Перелинковка между сайтами</b> там, где это уместно: анкоры описывают
+            задачу, а не просто дублируют название раздела.</li>
+          </ol>
+        </div>
+        <div class="stage-result">
+          <h4>Результат этапа</h4>
+          <ul>
+            <li>Техническая база, не мешающая индексации и ранжированию.</li>
+            <li>Каталог, страницы которого совпадают с формулировками потребности закупщика.</li>
+            <li>Микроразметка, готовая к парсингу поисковиками и LLM.</li>
+            <li>Согласованная ролевая модель двух сайтов без каннибализации.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="stage">
+      <div class="stage-head">
+        <div class="stage-num">3</div>
+        <h3>Контент и E-E-A-T для химического B2B</h3>
+        <span class="chip">Недели 5–10</span>
+      </div>
+      <div class="stage-body">
+        <div class="stage-works">
+          <h4>Перечень работ</h4>
+          <ol>
+            <li><b>Коммерческие страницы</b> под приоритетные кластеры: CAS, концентрация,
+            фасовка, условия хранения, ссылки на паспорт качества и свидетельство о госрегистрации.</li>
+            <li><b>Экспертные материалы</b> под информационные и смешанные интенты —
+            от лица технолога с указанием должности.</li>
+            <li><b>Цифровые кейсы и фактология:</b> вместо «мы надёжный поставщик» —
+            объём, регион, срок, полный пакет документов.</li>
+            <li><b>Оптимизация существующего контента:</b> TL;DR-блоки, FAQ в конце страниц,
+            таблицы сравнения марок и объёмов, чёткая иерархия H2 / H3.</li>
+          </ol>
+        </div>
+        <div class="stage-result">
+          <h4>Результат этапа</h4>
+          <ul>
+            <li>10–15 переработанных или новых страниц на каждый сайт.</li>
+            <li>Контент с проверяемыми фактами и атрибуцией авторства.</li>
+            <li>Готовая база для GEO: страницы, которые нейросеть может прочитать и выбрать источником.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="stage">
+      <div class="stage-head">
+        <div class="stage-num">4</div>
+        <h3>GEO: целенаправленная работа с генеративными ответами</h3>
+        <span class="chip">Недели 7–12</span>
+      </div>
+      <div class="stage-body">
+        <div class="stage-works">
+          <h4>Перечень работ</h4>
+          <ol>
+            <li><b>Мониторинг видимости</b> в Яндекс Нейро и AI Overviews по брендовым
+            и ключевым запросам: упоминается ли бренд, в каком контексте, кто цитируется вместо вас.</li>
+            <li><b>Оптимизация «под цитирование»:</b> ключевые утверждения — в первые абзацы,
+            оформление списками и короткими блоками «ответ сразу».</li>
+            <li><b>Работа с внешним цифровым следом:</b> упоминания на отраслевых площадках,
+            в химических каталогах, профильных СМИ и рейтингах.</li>
+            <li><b>Сравнительные и справочные материалы,</b> которые с высокой вероятностью
+            попадают в запросы к нейросетям.</li>
+          </ol>
+        </div>
+        <div class="stage-result">
+          <h4>Результат этапа</h4>
+          <ul>
+            <li>Первые зафиксированные упоминания / цитирования в Нейро и/или AI Overviews
+            по 5–15 целевым запросам.</li>
+            <li>Понимание, какие форматы контента и площадки «подтягивают» бренд в генеративную выдачу.</li>
+            <li>База для масштабирования GEO-направления после 3-го месяца.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5 -->
+    <div class="stage">
+      <div class="stage-head">
+        <div class="stage-num">5</div>
+        <h3>Аналитика, итерации и подготовка к масштабированию</h3>
+        <span class="chip">Недели 10–12</span>
+      </div>
+      <div class="stage-body">
+        <div class="stage-works">
+          <h4>Перечень работ</h4>
+          <ol>
+            <li><b>Снятие KPI «до / после»</b> по трафику, позициям, заявкам и AI-видимости,
+            с разделением на классический поиск и переходы из генеративных ответов.</li>
+            <li><b>Анализ точек роста:</b> какие кластеры дали прирост, какие страницы
+            не индексируются или не конвертируют, какие запросы появились в Нейро.</li>
+            <li><b>Корректировка контент-плана</b> на следующий цикл: усиление работающих
+            форматов и расширение семантики в смежные применения.</li>
+          </ol>
+        </div>
+        <div class="stage-result">
+          <h4>Результат этапа</h4>
+          <ul>
+            <li>Отчёт с фактическими цифрами за 3 месяца.</li>
+            <li>Карта работ на следующие 3–6 месяцев.</li>
+            <li>Приоритизированный бэклог для закрепления и роста результата.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KPI ================= -->
+  <section class="section">
+    <p class="section-title">Ожидаемые результаты</p>
+    <h2>KPI к концу 3-го месяца</h2>
+    <p class="section-intro">
+      Ниже — ориентиры, а не гарантия «всех запросов в топ-1». В B2B-химии и таре
+      высокочастотная коммерция требует 6–12 месяцев; за 3 месяца закладывается фундамент
+      и снимается «быстрый» прирост по средне- и низкочастотным кластерам.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Показатель</th>
+            <th>Ожидаемая динамика</th>
+            <th>Комментарий</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Индексация и техническая видимость</td>
+            <td>100% критичных страниц в индексе; Core Web Vitals в «зелёной» зоне</td>
+            <td>Базовый, но обязательный результат — без него остальное нестабильно.</td>
+          </tr>
+          <tr>
+            <td>Позиции по целевым запросам</td>
+            <td>Вход в топ-10–30 по 20–40% приоритетных средне- и низкочастотных запросов</td>
+            <td>ВЧ-коммерция сдвинется позже; первые движения по СЧ/НЧ видны уже на 4–6 неделе.</td>
+          </tr>
+          <tr>
+            <td>Органический трафик</td>
+            <td>+15–30% к целевым страницам относительно исходного уровня</td>
+            <td>Прирост неравномерный: сильнее там, где каталог перестроен под интенты.</td>
+          </tr>
+          <tr>
+            <td>Заявки из органики</td>
+            <td>Первые измеримые заявки из переработанных страниц; рост доли целевых обращений</td>
+            <td>Цикл сделки длинный, поэтому важен не только объём, но и качество обращения.</td>
+          </tr>
+          <tr>
+            <td>Видимость в AI-ответах (GEO)</td>
+            <td>5–15 зафиксированных упоминаний / цитирований в Нейро и/или AI Overviews</td>
+            <td>Доказательство работающей механики, а не покрытие всего ядра.</td>
+          </tr>
+          <tr>
+            <td>E-E-A-T и цифровой след</td>
+            <td>Авторские блоки, сертификаты и паспорта на страницах, 3–5 внешних упоминаний</td>
+            <td>Одновременно SEO-фактор и условие устойчивого GEO-результата.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>Ключевой управленческий акцент.</b> В этой нише выигрывает не тот, кто «сделал SEO»,
+      а тот, кого закупщик и нейросеть воспринимают как проверяемого эксперта по конкретным
+      маркам, средам и документам. Поэтому первые 3 месяца стоит оценивать не только по трафику,
+      но и по тому, появились ли у сайтов страницы, которые не стыдно показать технологу
+      или снабженцу — и которые поисковик или LLM может процитировать без риска фактической ошибки.
+    </div>
+  </section>
+
+  <!-- ================= GLOSSARY ================= -->
+  <section class="section">
+    <p class="section-title">Приложение</p>
+    <h2>Расшифровка терминов</h2>
+    <p class="section-intro">
+      Специализированные понятия из плана — простым языком и с пояснением, зачем они нужны
+      именно в этом проекте.
+    </p>
+
+    <dl class="glossary">
+
+      <div class="term">
+        <dt>E-E-A-T</dt>
+        <dd>Experience, Expertise, Authoritativeness, Trustworthiness — «опыт, экспертиза,
+        авторитетность, надёжность». Это не отдельный показатель в коде, а набор критериев,
+        по которым поисковик оценивает, можно ли доверять странице по «чувствительной» теме.
+        <em><b>Зачем проекту:</b> в химии и промышленной таре ошибка в выборе вещества
+        или тары стоит дорого, поэтому поисковик выше поднимает сайты с указанным автором,
+        документами и проверяемыми фактами.</em></dd>
+      </div>
+
+      <div class="term">
+        <dt>Core Web Vitals</dt>
+        <dd>Набор метрик Google, описывающих реальный пользовательский опыт: насколько быстро
+        загружается страница, насколько быстро она реагирует на действия и не «прыгает» ли
+        вёрстка. Входит в оценку качества страницы.
+        <em><b>Зачем проекту:</b> каталог с тяжёлыми фото тары и таблицами параметров
+        особенно чувствителен к скорости — медленная загрузка бьёт и по позициям, и по конверсии.</em></dd>
+      </div>
+
+      <div class="term">
+        <dt>LCP (Largest Contentful Paint)</dt>
+        <dd>Метрика «скорости видимого результата»: за какое время отрисовывается самый
+        крупный элемент на экране — обычно главное фото товара или заголовок.
+        Хорошее значение — до 2,5 секунды.
+        <em><b>Зачем проекту:</b> на карточке еврокуба или бочки LCP — это фото товара;
+        если оно грузится долго, пользователь уходит до того, как увидит цену и параметры.</em></dd>
+      </div>
+
+      <div class="term">
+        <dt>INP (Interaction to Next Paint)</dt>
+        <dd>Метрика отзывчивости интерфейса: сколько времени проходит от клика или нажатия
+        до видимой реакции страницы. Хорошее значение — до 200 миллисекунд.
+        С 2024 года заменила прежнюю метрику FID.
+        <em><b>Зачем проекту:</b> фильтры каталога (объём, материал, состояние тары) должны
+        срабатывать мгновенно, иначе закупщик не долистает до нужной позиции.</em></dd>
+      </div>
+
+      <div class="term">
+        <dt>CLS (Cumulative Layout Shift)</dt>
+        <dd>Метрика визуальной стабильности: насколько сильно элементы «прыгают» по странице
+        во время загрузки. Хорошее значение — до 0,1.
+        <em><b>Зачем проекту:</b> если баннер или шрифт сдвигает таблицу с параметрами
+        и кнопку «Запросить цену», пользователь может нажать не туда — это прямые потери заявок.</em></dd>
+      </div>
+
+      <div class="term">
+        <dt>Canonical (канонический URL)</dt>
+        <dd>HTML-атрибут, которым страница сообщает поисковику: «главная версия этого
+        материала — вот эта ссылка». Нужен, когда один и тот же контент доступен по нескольким
+        адресам (с фильтрами, параметрами сортировки, www и без, http и https).
+        <em><b>Зачем проекту:</b> в каталоге тары и химии легко получить десятки почти
+        одинаковых URL из-за фильтров — без canonical они конкурируют друг с другом
+        и «размывают» вес страницы.</em></dd>
+      </div>
+
+      <div class="term">
+        <dt>Интенты (поисковые намерения)</dt>
+        <dd>Цель, с которой человек вводит запрос. Основные типы: информационный («как выбрать
+        еврокуб»), коммерческий («купить перекись 37% оптом»), навигационный («ТранПак личный
+        кабинет»), транзакционный. Один и тот же запрос может иметь смешанный интент.
+        <em><b>Зачем проекту:</b> под каждый интент нужен свой тип страницы — статья не продаст,
+        а карточка товара не ответит на вопрос технолога. Путаница интентов — главная причина,
+        почему страница есть, а заявок нет.</em></dd>
+      </div>
+
+      <div class="term">
+        <dt>TL;DR-блок (Too Long; Didn't Read)</dt>
+        <dd>Короткая выжимка в 2–4 пункта в начале материала — «главное сразу», до основного
+        текста.
+        <em><b>Зачем проекту:</b> двойная польза. Человек за 10 секунд понимает, подходит ли
+        ему марка или тара, а нейросеть получает готовый структурированный ответ
+        и чаще выбирает страницу источником для цитирования.</em></dd>
+      </div>
+
+      <div class="term">
+        <dt>Application-запросы (задачные)</dt>
+        <dd>Запросы не про товар, а про задачу, которую нужно решить: «дезинфекция CIP-мойки
+        пищевого производства», «чем отмыть агрессивные остатки из еврокуба»,
+        «средство для асептического розлива».
+        <em><b>Зачем проекту:</b> именно так формулирует потребность технолог, который ещё
+        не выбрал конкретный продукт. Это самый ценный и наименее конкурентный сегмент
+        семантики — и одновременно лучший источник попадания в AI-ответы.</em></dd>
+      </div>
+
+    </dl>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <strong>Стратегия SEO и GEO продвижения · sterileworld.ru и tranpack.ru</strong><br>
+    План работ на 3 месяца: аудит и фундамент → техническая оптимизация и архитектура →
+    контент и E-E-A-T → GEO → аналитика и итерации.
+
+    <div class="disclaimer">
+      Документ носит характер рабочего плана. Сроки и ожидаемые показатели рассчитаны
+      для ниши B2B-химии и промышленной тары и предполагают согласованный доступ
+      к аналитике, каталогу и документации. При выявлении в первый месяц существенных
+      технических ограничений GEO-блок и масштабирование семантики сдвигаются на 2–3 недели,
+      при этом технический фундамент и E-E-A-T-сигналы остаются приоритетом.
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
